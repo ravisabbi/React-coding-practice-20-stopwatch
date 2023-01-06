@@ -6,6 +6,10 @@ import './index.css'
 class Stopwatch extends Component {
   state = {minutes: 0, seconds: 0}
 
+  componentWillUnmount() {
+    this.clearTimerInterval()
+  }
+
   getTimer = () => {
     const {minutes, seconds} = this.state
 
